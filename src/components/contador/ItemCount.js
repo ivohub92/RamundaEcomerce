@@ -1,28 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
+import './ItemCount.css'
+import {Card,Button, Container, Row} from "react-bootstrap";
 
 function ItemCount({stock,inicial}) {
-    const [counter, setCounter]= React.useState({inicial})
-    const sumador= () => {
-         setCounter (counter+1)
-    }
-    const resta= () => {
-        setCounter (counter-1)
-    }
-    const alert1= () => {
-        {alert("STOCK AGOTADO")}
-    }
+    const [counter, setCounter]= useState(0);
+    const [mensaje, setMensaje] = useState("");
     
-    const alert2= () => {
-        {alert("VALOR INVALIDO")}
+    const sumador= (stock) => {
+        (counter<=(stock-1))? setCounter (counter+1): alert("Stock máximo!")
     }
-    
+    const resta= (inicial) => {
+        (counter>=(inicial)) ? setCounter (counter-1):alert("Producto mínimo")
+    }
+    const agregarCarrito =() =>{
+        setMensaje(`enviado ${counter} al carrito...`);
+   }
+     
 
     return(
-        <div className="itemCount">
-            <p>{counter}</p>
-            <button onClick= {() => (counter< {stock}? sumador: alert1)}> +1 </button>
-            <button onClick= {() => (counter> 0 ? resta: alert2 )} >-1</button>
-        </div>
+        <Container >
+            <p className="itemText">{counter}</p>
+            <Container className="itemCount">
+            <button className="botonItemCount" onClick= {() => (sumador(stock))}> +1 </button>
+            <button className="botonItemCount"  onClick= {() => (resta(stock))}> -1 </button>
+            <button className="botonItemCount"  onClick= {()=> agregarCarrito()}>Agregar a carrito</button>
+            <p>{mensaje}</p>
+            </Container>
+        </Container>
     )
    
 }

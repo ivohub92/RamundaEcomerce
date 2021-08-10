@@ -1,6 +1,5 @@
 //DESAFIO crear un icono e insertalo en el navBar
 import React from "react";
-
 import Imagenwidget from "./media/logo.png";
 
 
