@@ -7,7 +7,7 @@ function ItemCount({stock,inicial}) {
     const [mensaje, setMensaje] = useState("");
     
     const sumador= () => {
-        if (counter<=stock-1 ){
+        if (counter<stock ){
             setCounter(counter+1)
         }else{
             alert("Producto maximo")
@@ -15,7 +15,7 @@ function ItemCount({stock,inicial}) {
     }
     const resta= () => {
         
-        if (counter>=inicial+1 ){
+        if (counter>inicial ){
             setCounter(counter-1)
         }else{
             alert("Producto minimo")
