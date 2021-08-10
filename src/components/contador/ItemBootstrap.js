@@ -21,7 +21,7 @@ function Item({id,titulo, descripcion, precio,url}){
         <Card.Text>{precio}</Card.Text>
           
     
-        <ItemCount stock={5} inicial={3} />
+        <ItemCount stock={5} inicial={1} />
       </Card.Body>
     </Card>
     </Container>

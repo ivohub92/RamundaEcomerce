@@ -3,29 +3,45 @@ import './ItemCount.css'
 import {Card,Button, Container, Row} from "react-bootstrap";
 
 function ItemCount({stock,inicial}) {
-    const [counter, setCounter]= useState(0);
+    const [counter, setCounter]= useState(inicial);
     const [mensaje, setMensaje] = useState("");
     
-    const sumador= (stock) => {
-        (counter<=(stock-1))? setCounter (counter+1): alert("Stock máximo!")
+    const sumador= () => {
+        if (counter<=stock-1 ){
+            setCounter(counter+1)
+        }else{
+            alert("Producto maximo")
+        }
     }
-    const resta= (inicial) => {
-        (counter>=(inicial)) ? setCounter (counter-1):alert("Producto mínimo")
+    const resta= () => {
+        
+        if (counter>=inicial+1 ){
+            setCounter(counter-1)
+        }else{
+            alert("Producto minimo")
+        }
     }
-    const agregarCarrito =() =>{
+    const onAdd =() =>{
+        if(counter<=stock || counter>=inicial ){
         setMensaje(`enviado ${counter} al carrito...`);
-   }
+        }else{
+            setMensaje('Ingrese un numero valido de productos')
+        }
+
+    }
      
 
     return(
         <Container >
             <p className="itemText">{counter}</p>
             <Container className="itemCount">
-            <button className="botonItemCount" onClick= {() => (sumador(stock))}> +1 </button>
-            <button className="botonItemCount"  onClick= {() => (resta(stock))}> -1 </button>
-            <button className="botonItemCount"  onClick= {()=> agregarCarrito()}>Agregar a carrito</button>
-            <p>{mensaje}</p>
+                <button className="botonItemCount" onClick= {() => (sumador())}> +1 </button>
+                <button className="botonItemCount"  onClick= {() => (resta())}> -1 </button>
+                <button className="botonItemCount"  onClick= {()=> onAdd()}>Agregar a carrito</button>
             </Container>
+            <div>
+                <p>{mensaje}</p>
+            </div>
         </Container>
     )
    
