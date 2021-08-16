@@ -10,7 +10,7 @@ export const NavBar = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto mx-auto">
-              <Nav.Link className='margenNav' href="#coleccion">Coleccion 2021</Nav.Link>
+              <Nav.Link className='margenNav' href="productos">Coleccion 2021</Nav.Link>
               <Nav.Link className='margenNav' href="#socios">Trabaja con nosotros</Nav.Link>
               <NavDropdown className='margenNav' title="Colecciones anteriores" id="collasible-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Vestidos</NavDropdown.Item>
