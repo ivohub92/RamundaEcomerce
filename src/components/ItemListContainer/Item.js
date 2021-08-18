@@ -1,11 +1,20 @@
 import React from "react";
 import {Card,Button, Container} from "react-bootstrap";
 import ItemCount from "./ItemCount";
-import './ItemBootstrap.css'
+import './Item.css';
+import { useParams, useHistory } from "react-router-dom";
 
 
 
-function ItemBootstrap({id,nombre, descripcion, precio,url}){
+function Item({id,nombre, descripcion, precio,url}){
+
+   // let {params} = useParams();
+  const history = useHistory();
+  const handleNavigation = (id) => {
+    history.push(`/Item/${id}`);
+  };
+
+
 
 
     return(
@@ -22,6 +31,7 @@ function ItemBootstrap({id,nombre, descripcion, precio,url}){
                 
           <ItemCount stock={5} inicial={1} />
         </Card.Body>
+        <button onClick={()=>handleNavigation(id)}>ver detalles</button>
       </Card>
     </Container>
 
@@ -31,4 +41,4 @@ function ItemBootstrap({id,nombre, descripcion, precio,url}){
     
 };
     
-export default ItemBootstrap;
+export default Item;

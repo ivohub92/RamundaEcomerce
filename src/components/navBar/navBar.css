@@ -1,3 +1,7 @@
 .margenNav{
     margin-left: 5vw;
 }
+.link{
+    box-sizing: border-box;
+    margin: 0 0 0 0;
+}

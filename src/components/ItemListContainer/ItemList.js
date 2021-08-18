@@ -1,5 +1,5 @@
 import React from "react";
-import ItemBootstrap from "./ItemBootstrap";
+import Item from "./Item";
 
 //Importo fotos
 import bloodFantasy from "./media/bloodFantasy.png";
@@ -39,7 +39,7 @@ function ItemList () {
                 <h1 style={{ textAlign: 'center' }}>Productos</h1>
                 <div className="itemList">
                     {listaProductos.map(producto=>
-                    <ItemBootstrap id={producto.id} nombre={producto.nombre} descripcion={producto.descripcion} precio={producto.precio} url={producto.url}/>
+                    <Item id={producto.id} nombre={producto.nombre} descripcion={producto.descripcion} precio={producto.precio} url={producto.url}/>
                     )}
                 </div>
             </div>
