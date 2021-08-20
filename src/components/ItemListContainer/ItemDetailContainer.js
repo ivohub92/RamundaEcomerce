@@ -2,11 +2,11 @@ import React from 'react'
 import {Card,Button, Container} from "react-bootstrap";
 import { useParams, useHistory } from "react-router-dom";
 import ItemCount from './ItemCount';
-import bloodFantasy from "./media/bloodFantasy.png";
-import blueVampirella from "./media/blueVampirella.png";
-import charoline from "./media/charoline.png";
-import redPoison from "./media/redPoison.png";
-import redPriest from "./media/redPriest.jpg";
+import bloodFantasy from "./media/conjuntos/bloodFantasy.png";
+import blueVampirella from "./media/conjuntos/blueVampirella.png";
+import charoline from "./media/conjuntos/charoline.png";
+import redPoison from "./media/conjuntos/redPoison.png";
+import redPriest from "./media/conjuntos/redPriest.jpg";
 
 
 
@@ -22,7 +22,7 @@ const ItemDetailContainer = ({id}) => {
           {id:2, nombre:"Conjunto Blue Vampirella", descripcion:"Bella e inmortal", precio:"3000", imagen: blueVampirella},
           {id:3, nombre:"Body Charoline", descripcion:"Para los amantes del charol",precio:"3000", imagen: charoline},
           {id:4, nombre:"Conjunto Red Poison", descripcion:"Un rojo venenoso, para matar suavemete",precio:"3000", imagen: redPoison},
-          {id: 5, nombre:"Vestido Red Priest", descripcion:"Sientete la saserdotisa mas bella",precio:"3000", imagen: redPriest }   
+          {id:5, nombre:"Vestido Red Priest", descripcion:"Sientete la saserdotisa mas bella",precio:"3000", imagen: redPriest }   
         ];
     
        
@@ -46,8 +46,7 @@ const ItemDetailContainer = ({id}) => {
           </Card.Text>
           <Card.Text>{detalleProducto[0].precio}</Card.Text>
           <ItemCount stock={5} inicial={1} />                 
-          
-        </Card.Body>
+                  </Card.Body>
       </Card>
     </Container>
     

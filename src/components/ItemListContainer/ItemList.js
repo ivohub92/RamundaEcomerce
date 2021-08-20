@@ -2,11 +2,11 @@ import React from "react";
 import Item from "./Item";
 
 //Importo fotos
-import bloodFantasy from "./media/bloodFantasy.png";
-import blueVampirella from "./media/blueVampirella.png";
-import charoline from "./media/charoline.png";
-import redPoison from "./media/redPoison.png";
-import redPriest from "./media/redPriest.jpg";
+import bloodFantasy from "./media/conjuntos/bloodFantasy.png";
+import blueVampirella from "./media/conjuntos/blueVampirella.png";
+import charoline from "./media/conjuntos/charoline.png";
+import redPoison from "./media/conjuntos/redPoison.png";
+import redPriest from "./media/conjuntos/redPriest.jpg";
 
 function ItemList () {
     const listaProductos= [

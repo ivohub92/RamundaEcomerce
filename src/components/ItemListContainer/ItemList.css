@@ -1,8 +1,9 @@
 .itemList{
-    display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+    width: 80%;
+	margin: 0 auto;	
+	display:grid;
+	grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
 	justify-content: center;
 	align-items: center;
-	align-content: stretch;
+	justify-items: center;
 }

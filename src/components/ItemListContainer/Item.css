@@ -1,7 +1,7 @@
-.itemBootstrap{
-    align-items: center;
-    text-align: center;
-    margin: auto auto;
+
+.itemCard {
+    width: 100%;
+    max-width: 300px;
 }
 
 

@@ -12,6 +12,11 @@
     width: 60%;
     box-sizing: border-box;
 }
+.imgConjunto{
+    margin: 0 0 0 0;
+    width: 51%;
+    box-sizing: border-box;
+}
 
 .ItemList{
     margin: 0 0 0 0;

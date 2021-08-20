@@ -6,20 +6,22 @@ import { useParams, useHistory } from "react-router-dom";
 
 
 
+
 function Item({id,nombre, descripcion, precio,url}){
 
    // let {params} = useParams();
   const history = useHistory();
+
   const handleNavigation = (id) => {
-    history.push(`/Item/${id}`);
+    history.push(`/productos/${id}`);
   };
 
 
 
 
     return(
-    <Container class='itemBootstrap'>    
-      <Card style={{ width: '18rem' }}>
+       
+      <Card  className="itemCard">
         <Card.Img variant="top" src={url} />
         <Card.Body>
           <Card.Title>{nombre}</Card.Title>
@@ -28,12 +30,11 @@ function Item({id,nombre, descripcion, precio,url}){
             the card's content. */}
           </Card.Text>
           <Card.Text>{precio}</Card.Text>
-                
           <ItemCount stock={5} inicial={1} />
         </Card.Body>
         <button onClick={()=>handleNavigation(id)}>ver detalles</button>
       </Card>
-    </Container>
+    
 
     
     )

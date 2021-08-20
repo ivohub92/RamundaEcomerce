@@ -24,7 +24,7 @@ function App() {
         <Route exact path="/productos">
         <ItemList/> 
         </Route>
-        <Route path="/Item/:params">
+        <Route path="/productos/:params">
         <ItemDetailContainer/>
         </Route>              
       </Switch>
