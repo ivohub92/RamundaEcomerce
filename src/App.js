@@ -5,24 +5,21 @@ import { NavBar } from './components/navBar/navBar';
 import ItemList  from './components/ItemListContainer/ItemList';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemDetailContainer from './components/ItemListContainer/ItemDetailContainer';
-
-const datos = {
-  titulo : "Texto generico. Lorem ipsum y lo que sea"
-}
-
+import CartContext from './context/cartContext';
 
 
 function App() {
   return(
     <div className="App">
+      <CartContext.provider/>
       <BrowserRouter>
       <NavBar/>
       <Switch>
         <Route exact path="/">
-          <ItemListContainer titulo={datos.titulo}/>
+          <ItemListContainer/>
         </Route>
         <Route exact path="/productos">
-        <ItemList/> 
+          <ItemList/> 
         </Route>
         <Route path="/productos/:params">
         <ItemDetailContainer/>

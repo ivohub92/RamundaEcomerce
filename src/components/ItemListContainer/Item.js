@@ -13,7 +13,7 @@ function Item({id,nombre, descripcion, precio,url}){
   const history = useHistory();
 
   const handleNavigation = (id) => {
-    history.push(`/productos/${id}`);
+    history.push(`/Item/${id}`);
   };
 
 
