@@ -5,13 +5,13 @@ import { NavBar } from './components/navBar/navBar';
 import ItemList  from './components/ItemListContainer/ItemList';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemDetailContainer from './components/ItemListContainer/ItemDetailContainer';
-import CartContext from './context/cartContext';
+
 
 
 function App() {
   return(
     <div className="App">
-      <CartContext.provider/>
+      
       <BrowserRouter>
       <NavBar/>
       <Switch>
@@ -21,11 +21,12 @@ function App() {
         <Route exact path="/productos">
           <ItemList/> 
         </Route>
-        <Route path="/productos/:params">
+        <Route path="/Item/:params">
         <ItemDetailContainer/>
         </Route>              
       </Switch>
       </BrowserRouter>   
+     
     </div>
   ); 
 }
