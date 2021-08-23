@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { NavBar } from './components/navBar/navBar';
+import CartContext from '../src/context/CartContext';
 
 
 
@@ -8,7 +9,9 @@ import { NavBar } from './components/navBar/navBar';
 function App() {
   return(
     <div className="App">
-      <NavBar/>      
+      <CartContext.Provider>
+      <NavBar/>
+      </CartContext.Provider>      
     </div>
   ); 
 }

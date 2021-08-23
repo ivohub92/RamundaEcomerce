@@ -7,7 +7,7 @@ import ItemDetail from './ItemDetail';
 function ItemDetailContainer() {
  //creacion del state   
   const [datosItemDetail, setdatosItem] = useState({});
-  const itemId= useParams();
+  const {itemId}= useParams();
   
   const getItem= (itemId) => {
   const ItemProds = listaProductos.find((prods) => prods.id == itemId);

@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 
 
-function Item({id,nombre, descripcion, precio,imagen}){
+function Item({id,nombre, descripcion, precio, imagen}){
 
    // let {params} = useParams();
   const history = useHistory();
@@ -15,8 +15,6 @@ function Item({id,nombre, descripcion, precio,imagen}){
   };
 
 
-
-
     return(
        
       <Card  className="itemCard">
@@ -24,11 +22,9 @@ function Item({id,nombre, descripcion, precio,imagen}){
         <Card.Body>
           <Card.Title>{nombre}</Card.Title>
           <Card.Text>
-            {descripcion/* Some quick example text to build on the card title and make up the bulk of
-            the card's content. */}
+            {descripcion}
           </Card.Text>
-          <Card.Text>{precio}</Card.Text>
-          
+          <Card.Text>{precio}</Card.Text>          
         </Card.Body>
         <button onClick={()=>handleNavigation(id)}>ver detalles</button>
       </Card>

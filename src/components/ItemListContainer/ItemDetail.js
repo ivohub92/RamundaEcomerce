@@ -1,39 +1,41 @@
-import React from 'react'
+import {React, useState} from 'react';
 import {Card, Container} from "react-bootstrap";
-import { useParams, useHistory } from "react-router-dom";
-import { listaProductos } from '../helpers/listaProductos';
+import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
 
 
+const ItemDetail = ({item}) => {
 
-
-
-
-
-
-const ItemDetailContainer = ({id}) => {
-    
-    let {itemId} = useParams();//productos detallados
-            
-        const detalleProducto = listaProductos.filter(producto=>producto.id==itemId);
-       
-       
-    
+  const [quantityToAdd, setQuantityToAdd] = useState(0);
+  const onAdd = (i) => {
+    setQuantityToAdd(i);
+  };
+          
     
         return ( 
             <>
                   
     <Container class='itemBootstrap'>    
-      <Card style={{ width: '20 rem' }}>
-        <Card.Img variant="top" src={detalleProducto[0].imagen} />
+      <Card style={{ width: '20 rem' }}>  
+      <Card.Img variant="top" src={item.imagen} />      
         <Card.Body>
-          <Card.Title>{detalleProducto[0].nombre}</Card.Title>
+          <Card.Title>{item.nombre}</Card.Title>
           <Card.Text>
-            {detalleProducto[0].descripcion}
+            {item.descripcion}
           </Card.Text>
-          <Card.Text>{detalleProducto[0].precio}</Card.Text>
-          <ItemCount stock={5} inicial={1} />                 
-                  </Card.Body>
+          <Card.Text>{item.precio}$</Card.Text>
+          
+        {quantityToAdd > 0 ? (
+          <Link to="/cart" /* onClick={() => addItem(item, selectedItem)} */>
+            <button className="btn btn-dark">
+              Agregar {quantityToAdd} al carrito
+            </button>
+          </Link>
+        ) : (
+          <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
+        )}
+                 
+        </Card.Body>
       </Card>
     </Container>
     
@@ -49,4 +51,4 @@ const ItemDetailContainer = ({id}) => {
     
     
     
-    export default ItemDetailContainer;
+    export default ItemDetail;

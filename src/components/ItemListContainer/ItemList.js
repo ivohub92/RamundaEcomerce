@@ -8,7 +8,7 @@ import Item from "./Item";
 function addItem({ id, precio, titulo, imagen, descripcion, stock }, index) {
     return (
       <div className="">
-        <Item key={index} id={id} titulo={titulo} precio={precio} imagen={imagen} descripcion={descripcion}
+        <Item key={index} id={id} titulo={titulo} precio={precio} imagen={imagen}
         stock={stock}
         />
       </div>
