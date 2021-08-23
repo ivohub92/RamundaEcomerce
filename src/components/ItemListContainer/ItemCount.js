@@ -33,7 +33,7 @@ function ItemCount({stock,inicial}) {
 
     return(
         <Container >
-            <p className="itemText">{counter}</p>
+            <p className="itemText">Cantidad seleccionada: {counter}</p>
             <Container className="itemCount">
                 <button className="botonItemCount" onClick= {() => (sumador())}> +1 </button>
                 <button className="botonItemCount"  onClick= {() => (resta())}> -1 </button>

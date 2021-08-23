@@ -1,13 +1,11 @@
 import React from "react";
-import {Card,Button, Container} from "react-bootstrap";
-import ItemCount from "./ItemCount";
+import {Card} from "react-bootstrap";
 import './Item.css';
-import { useParams, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 
 
-
-function Item({id,nombre, descripcion, precio,url}){
+function Item({id,nombre, descripcion, precio,imagen}){
 
    // let {params} = useParams();
   const history = useHistory();
@@ -22,7 +20,7 @@ function Item({id,nombre, descripcion, precio,url}){
     return(
        
       <Card  className="itemCard">
-        <Card.Img variant="top" src={url} />
+        <Card.Img variant="top" src={imagen} />
         <Card.Body>
           <Card.Title>{nombre}</Card.Title>
           <Card.Text>
@@ -30,7 +28,7 @@ function Item({id,nombre, descripcion, precio,url}){
             the card's content. */}
           </Card.Text>
           <Card.Text>{precio}</Card.Text>
-          <ItemCount stock={5} inicial={1} />
+          
         </Card.Body>
         <button onClick={()=>handleNavigation(id)}>ver detalles</button>
       </Card>

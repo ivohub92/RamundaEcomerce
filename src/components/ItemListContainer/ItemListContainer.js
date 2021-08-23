@@ -1,22 +1,35 @@
-import React from 'react'
-import {Container, Row, Col} from 'react-bootstrap';
-import vestido from './media/yukata2.jpeg';
-import conjunto from './media/conjunto.jpeg';
+import { React, useState, useEffect } from "react";
+import { Promesa } from "../helpers/listaProductos";
 import './ItemListContainer.css';
+import ItemList from "./ItemList";
 
 
-function ItemListContainer({}){
-    return(
-        <div>
-            <Container className='containerYukata'>
-                <Row className='itemList'>
-                <Col className='yukata'><img className="imgConjunto" src={conjunto} alt="conjuntos"/><h3>Conjuntos</h3></Col>
-                <Col className='yukata'><img className='imgYukata' src={vestido} alt="vestido"/><h3>Vestidos</h3></Col>
-                </Row>
-            </Container>
+
+function ItemListContainer(props) {
+    const [items, setItems] = useState([]);
+  
+    useEffect(() => {
+      getlistaProductos();
+    }, []);
+  
+    const getlistaProductos = async () => {
+      try {
+        const res = await Promesa();
+        setItems(res);
+      } catch (err) {
+        console.log("Error al cargar los productos: ", err);
+      }
+    };
+  
+    return (
+        <>
+        <h2 className="text-center">Lista de productos</h2>
+        <div className="fs-5 text-center d-flex m-auto justify-content-center flex-wrap">
+            <ItemList className="" items={items} />
         </div>
+        </>
     );
-}
-
-export default ItemListContainer;
+  }
+  
+  export default ItemListContainer;
 

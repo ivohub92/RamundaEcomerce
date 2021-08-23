@@ -1,12 +1,9 @@
 import React from 'react'
-import {Card,Button, Container} from "react-bootstrap";
+import {Card, Container} from "react-bootstrap";
 import { useParams, useHistory } from "react-router-dom";
+import { listaProductos } from '../helpers/listaProductos';
 import ItemCount from './ItemCount';
-import bloodFantasy from "./media/conjuntos/bloodFantasy.png";
-import blueVampirella from "./media/conjuntos/blueVampirella.png";
-import charoline from "./media/conjuntos/charoline.png";
-import redPoison from "./media/conjuntos/redPoison.png";
-import redPriest from "./media/conjuntos/redPriest.jpg";
+
 
 
 
@@ -16,19 +13,9 @@ import redPriest from "./media/conjuntos/redPriest.jpg";
 
 const ItemDetailContainer = ({id}) => {
     
-    let {params} = useParams();//productos detallados
-        const listaDetail =[
-          {id:1, nombre:"Conjunto Blood Fantasy", descripcion:"Conjunto Sangriento", precio:"3000", imagen: bloodFantasy},
-          {id:2, nombre:"Conjunto Blue Vampirella", descripcion:"Bella e inmortal", precio:"3000", imagen: blueVampirella},
-          {id:3, nombre:"Body Charoline", descripcion:"Para los amantes del charol",precio:"3000", imagen: charoline},
-          {id:4, nombre:"Conjunto Red Poison", descripcion:"Un rojo venenoso, para matar suavemete",precio:"3000", imagen: redPoison},
-          {id:5, nombre:"Vestido Red Priest", descripcion:"Sientete la saserdotisa mas bella",precio:"3000", imagen: redPriest }   
-        ];
-    
-       
-
-
-       const detalleProducto = listaDetail.filter(producto=>producto.id==params);
+    let {itemId} = useParams();//productos detallados
+            
+        const detalleProducto = listaProductos.filter(producto=>producto.id==itemId);
        
        
     
