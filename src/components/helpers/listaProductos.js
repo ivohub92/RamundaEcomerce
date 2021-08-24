@@ -8,11 +8,11 @@ import redPriest from "../media/conjuntos/redPriest.jpg";
 
 
         export let listaProductos =[
-          {id:1, nombre:"Conjunto Blood Fantasy", category:"lenceria", descripcion:"Conjunto Sangriento", precio:"3000", imagen: bloodFantasy},
-          {id:2, nombre:"Conjunto Blue Vampirella", category:"lenceria", descripcion:"Bella e inmortal", precio:"3000", imagen: blueVampirella},
-          {id:3, nombre:"Body Charoline", category:"lenceria", descripcion:"Para los amantes del charol",precio:"3000", imagen: charoline},
-          {id:4, nombre:"Conjunto Red Poison", category:"lenceria", descripcion:"Un rojo venenoso, para matar suavemete",precio:"3000", imagen: redPoison},
-          {id:5, nombre:"Vestido Red Priest", category:"vestidos", descripcion:"Sientete la saserdotisa mas bella",precio:"3000", imagen: redPriest }   
+          {id:1, stock:10, nombre:"Conjunto Blood Fantasy", category:"lenceria", descripcion:"Conjunto Sangriento", precio:"3000", imagen: bloodFantasy},
+          {id:2, stock:10, nombre:"Conjunto Blue Vampirella", category:"lenceria", descripcion:"Bella e inmortal", precio:"3000", imagen: blueVampirella},
+          {id:3, stock:10, nombre:"Body Charoline", category:"lenceria", descripcion:"Para los amantes del charol",precio:"3000", imagen: charoline},
+          {id:4, stock:10, nombre:"Conjunto Red Poison", category:"lenceria", descripcion:"Un rojo venenoso, para matar suavemete",precio:"3000", imagen: redPoison},
+          {id:5, stock:10, nombre:"Vestido Red Priest", category:"vestidos", descripcion:"Sientete la saserdotisa mas bella",precio:"3000", imagen: redPriest }   
         ];
 
         export const Promesa = async () => {

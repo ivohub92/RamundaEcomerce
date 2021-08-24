@@ -26,9 +26,7 @@ const ItemDetail = ({item}) => {
           <Card.Text>{item.precio}$</Card.Text>
           
         {quantityToAdd > 0 ? (
-          <Link to="/cart" /* onClick={() => addItem(item, selectedItem)} */>
-            <button className="btn btn-dark">
-              Agregar {quantityToAdd} al carrito
+          <Link to="/cart"> <button className="btn btn-dark"> Agregar {quantityToAdd} al carrito
             </button>
           </Link>
         ) : (

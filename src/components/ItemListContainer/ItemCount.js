@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './ItemCount.css'
-import {Card,Button, Container, Row} from "react-bootstrap";
+import {Container} from "react-bootstrap";
 
 function ItemCount({stock,inicial, onAdd}) {
     const [counter, setCounter]= useState(inicial);

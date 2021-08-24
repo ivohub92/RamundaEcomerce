@@ -20,11 +20,9 @@ function Item({id,nombre, descripcion, precio, imagen}){
       <Card  className="itemCard">
         <Card.Img variant="top" src={imagen} />
         <Card.Body>
-          <Card.Title>{nombre}</Card.Title>
-          <Card.Text>
-            {descripcion}
-          </Card.Text>
-          <Card.Text>{precio}</Card.Text>          
+          <Card.Title> { nombre }</Card.Title>
+          <Card.Text> { descripcion }</Card.Text>
+          <Card.Text>${precio}</Card.Text>          
         </Card.Body>
         <button onClick={()=>handleNavigation(id)}>ver detalles</button>
       </Card>
