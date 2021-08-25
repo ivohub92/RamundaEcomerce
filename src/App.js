@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import CartContext from './components/context/CartContext';
+import {CartProvider} from './components/context/CartContext';
 import Router from '../src/router/Router'
 
 
@@ -8,9 +8,9 @@ import Router from '../src/router/Router'
 function App() {
   return(
     <div className="App">
-      <CartContext.Provider>
+      <CartProvider>
         <Router/>
-      </CartContext.Provider>      
+      </CartProvider>      
     </div>
   ); 
 }

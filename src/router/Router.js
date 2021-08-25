@@ -3,7 +3,9 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
 import NavBar from "../components/navBar/navBar";
 import ItemDetailContainer from "../components/ItemListContainer/ItemDetailContainer"
-import NotFound from "../components/notFound";
+import Cart from "../components/cartWidget/Cart";
+import NotFound from "../components/notFound"; 
+
 
 
 const Router = () => {
@@ -14,7 +16,8 @@ const Router = () => {
                 <Route exact path="/category/:categoryId" component={ItemListContainer}/>
                 <Route exact path="/" component={ItemListContainer} />
                 <Route path="/Item/:itemId"  component={ItemDetailContainer} />
-                <Route path="*" component={NotFound} />              
+                <Route path="*" component={NotFound} />
+                <Route exact path="/cart" component={Cart} />              
             </Switch>
       </BrowserRouter>
    

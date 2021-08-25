@@ -29,7 +29,7 @@ export const NavBar = () => {
                 </NavDropdown>
               </Nav>
               <Nav>
-                <Nav.Link href="#deets">Contacto</Nav.Link>
+                <Nav.Link  as= {Link} to='/cart' >Carrito</Nav.Link>
                 <Nav.Link eventKey={2} href="#socios">
                   Iniciar sesion!
                 </Nav.Link>
