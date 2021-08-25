@@ -1,16 +1,23 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
+import NavBar from "../components/navBar/navBar";
+import ItemDetailContainer from "../components/ItemListContainer/ItemDetailContainer"
+import NotFound from "../components/notFound";
 
 
 const Router = () => {
     return(
         <BrowserRouter>
-            <switch>
-                <Route exact path="/home" component= {ItemListContainer} />
-
-            </switch>
-        </BrowserRouter>
+            <NavBar/>
+            <Switch>
+                <Route exact path="/category/:categoryId" component={ItemListContainer}/>
+                <Route exact path="/" component={ItemListContainer} />
+                <Route path="/Item/:itemId"  component={ItemDetailContainer} />
+                <Route path="*" component={NotFound} />              
+            </Switch>
+      </BrowserRouter>
+   
     )
 }
 export default Router

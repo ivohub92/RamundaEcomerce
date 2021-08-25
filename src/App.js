@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
-import { NavBar } from './components/navBar/navBar';
-import CartContext from '../src/context/CartContext';
-
+import CartContext from './components/context/CartContext';
+import Router from '../src/router/Router'
 
 
 
@@ -10,7 +9,7 @@ function App() {
   return(
     <div className="App">
       <CartContext.Provider>
-      <NavBar/>
+        <Router/>
       </CartContext.Provider>      
     </div>
   ); 

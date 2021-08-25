@@ -2,16 +2,12 @@ import React from 'react';
 import { Nav, Navbar, NavDropdown, Container  } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import CartWidget from "./CartWidget";
-import ItemList  from '../ItemListContainer/ItemList';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import ItemDetailContainer from '../ItemListContainer/ItemDetailContainer';
-import ItemListContainer from '../ItemListContainer/ItemListContainer';
 import "./navBar.css";
 
 export const NavBar = () => {
   return (
     <div>
-      <BrowserRouter>
+     
         
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Container>
@@ -40,23 +36,8 @@ export const NavBar = () => {
               </Nav>
             </Navbar.Collapse>
           </Container>
-        </Navbar>
-        
-        <Switch>
-        <Route exact path="/category/:categoryId">
-            <ItemListContainer/>
-          </Route>
-          <Route exact path="/">
-            <ItemListContainer/>
-          </Route>
-          <Route exact path="/productos">
-            <ItemList/> 
-          </Route>
-          <Route path="/Item/:itemId">
-            <ItemDetailContainer/>
-          </Route>              
-        </Switch>
-      </BrowserRouter>
+        </Navbar>       
+       
     </div>
   );
 };
