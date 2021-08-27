@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import './ItemCount.css'
 import {Container} from "react-bootstrap";
 
-function ItemCount({stock,inicial, onAdd}) {
-    const [counter, setCounter]= useState(inicial);
+function ItemCount({stock,initial, onAdd}) {
+    const [counter, setCounter]= useState(initial);
     
     
     const sumador= () => {
@@ -15,7 +15,7 @@ function ItemCount({stock,inicial, onAdd}) {
     }
     const resta= () => {
         
-        if (counter>inicial ){
+        if (counter>0 ){
             setCounter(counter-1)
         }else{
             alert("Producto minimo")
