@@ -23,10 +23,10 @@ const ItemDetail = ({ item }) => {
             <Card.Title>{item.nombre}</Card.Title>
             <Card.Text>{item.descripcion}</Card.Text>
             <Card.Text>{item.precio}$</Card.Text>
-            {setSelectItem > 0 ? (
+            {selectItem > 0 ? (
               <Link to="/cart" onClick={() => addItem(item, selectItem)}>
                 <button className="btn btn-dark">
-                  Agregar {setSelectItem} al carrito
+                  Agregar {selectItem} al carrito
                 </button>
               </Link>
             ) : (
