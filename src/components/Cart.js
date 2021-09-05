@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FaTrashAlt } from "react-icons/fa";
+import { FaTrashAlt }  from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { CartContext } from "../components/context/CartContext";
 import "./Cart.css";
@@ -7,8 +7,7 @@ import "./Cart.css";
 
 const Cart = () => {
   const { items, cartSize, clear, removeItems } = useContext(CartContext);
-  console.log("items", items);
-  console.log("cartsize", cartSize);
+
   return (
     <div>
       <div className="container padding-bottom-3x mb-1">
@@ -41,20 +40,15 @@ const Cart = () => {
                         <a className="product-thumb" href="#">
                           <img
                            
-                            src={product.item.pictureUrl}
+                            src={product.item.imagen}
                             alt="Producto"
                           />
                         </a>
                         <div className="product-info">
                           <h4 className="product-title">
-                            <a href="#">{product.item.title}</a>
+                            <a href="#">{product.item.titulo}</a>
                           </h4>
-                          <span>
-                            <em>Autor:</em> XXXX
-                          </span>
-                          <span>
-                            <em>Institución:</em> XXXX
-                          </span>
+                          
                         </div>
                       </div>
                     </td>
