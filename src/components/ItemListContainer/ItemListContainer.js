@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import getFirestore from "../firebase/firebase";
+import {getFirestore} from "../firebase/firebase";
 import "./ItemListContainer.css";
 import ItemList from "./ItemList";
 
