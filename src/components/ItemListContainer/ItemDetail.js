@@ -14,7 +14,7 @@ const {disabledAddToCart, setDisabledAddToCart}= useState(false)
 
 useEffect (() => {
   const db = getFirestore();
-  const itemCollection= db.collection("items");
+  const itemCollection= db.collection("item");
   const currentItem = itemCollection.doc(id);
 
   currentItem.get().then((document) =>{
@@ -52,7 +52,7 @@ useEffect (() => {
             <Card.Title>{item.nombre}</Card.Title>
             <Card.Text>{item.descripcion}</Card.Text>
             <Card.Text>{item.precio}$</Card.Text>
-            <button onClick={handleItemToCart}> Agregar a carrrito </button>
+            <button disabled={disabledAddToCart} onClick={handleItemToCart}> Agregar a carrrito </button>
 
               <ItemCount counter={quantity} from={FROM} setCounter={setQuantity} to={item.stock}/>
             </Card.Body>
