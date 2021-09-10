@@ -37,8 +37,8 @@ const Checkout = () => {
     const infoCart = items.map(({ item, quantity }) => ({
       items: {
         id: item.id,
-        titulo: item.titulo,
-        precio: item.precio,
+        title: item.title,
+        price: item.price,
       },
       quantity,
     }));
@@ -51,7 +51,7 @@ const Checkout = () => {
       },
       items: infoCart,
       date: firebase.firestore.Timestamp.fromDate(new Date()),
-      total: calcTotal(),
+      total: total(),
     };
 
     orders

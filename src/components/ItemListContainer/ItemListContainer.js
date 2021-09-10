@@ -7,15 +7,15 @@ function ItemListContainer(props) {
   //    const [items, setItems] = useState([]);
   //
   //useEffect(() => {
-  //getlistaProductos();
+  //getlistaProducs();
   //}, []);
 
-  //const getlistaProductos = async () => {
+  //const getlistaProducs = async () => {
   //try {
   //const res = await Promesa();
   //setItems(res);
   //} catch (err) {
-  //console.log("Error al cargar los productos: ", err);
+  //console.log("Error al cargar los producs: ", err);
   //}
   //};
 
@@ -32,8 +32,8 @@ function ItemListContainer(props) {
   }, []);
   return (
     <>
-      <h2 className="text-center">Lista de productos</h2>
-      <div className="fs-5 text-center d-flex m-auto justify-content-center flex-wrap">
+      <h2 className="text-center">Lista de producs</h2>
+      <div className="fs-5 text-center d-flex m-au justify-content-center flex-wrap">
         <ItemList className="" items={items} />
       </div>
     </>

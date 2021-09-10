@@ -1,19 +1,48 @@
-import { React, useState, useContext } from "react";
+import { React, useState,  useEffect, useContext } from "react";
 import { Card, Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import { CartContext } from "../context/CartContext";
+import { getFirestore } from "../firebase/firebase";
 
-const ItemDetail = ({ item }) => {
-  const [selectItem, setSelectItem] = useState(0);
-  //me traigo la función addItem de mi context
-  const { addItem } = useContext(CartContext);
+const ItemDetail = () => {
 
-  const onAdd = (quantity) => {
-    setSelectItem(quantity);
-    addItem(item, quantity);
-  };
+const FROM= 1;
+const { addItem, items } = useContext(CartContext);
+const {item, setItem}= useState(null);
+const {quantity, setQuantity}= useState(1);
+const {disabledAddToCart, setDisabledAddToCart}= useState(false)
 
+useEffect (() => {
+  const db = getFirestore();
+  const itemCollection= db.collection("items");
+  const currentItem = itemCollection.doc(id);
+
+  currentItem.get().then((document) =>{
+    if (!document.exist){
+      console.log("no item");
+      return;
+    }
+    setItem({ id:document.id, ...document.data()
+    });
+  }, [id]);
+
+
+  useEffect(() => {
+    if (items.length>0) {
+      const isDisabled = items.some(
+        (currentItem) => currentItem.item.item.id === item.id
+      );
+      setDisabledAddToCart(isDisabled);
+    }
+  }, [items]);
+
+  console.log("item",item);
+  if (!item) return <div>Loading....</div>
+
+})
+ const handleItemToCart = () => {
+   addItem( { item, quantity} );
+ }
   return (
     <>
       <Container class="itemBootstrap">
@@ -23,16 +52,10 @@ const ItemDetail = ({ item }) => {
             <Card.Title>{item.nombre}</Card.Title>
             <Card.Text>{item.descripcion}</Card.Text>
             <Card.Text>{item.precio}$</Card.Text>
-            {selectItem > 0 ? (
-              <Link to="/cart" onClick={() => addItem(item, selectItem)}>
-                <button className="btn btn-dark">
-                  Agregar {selectItem} al carrito
-                </button>
-              </Link>
-            ) : (
-              <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
-            )}
-          </Card.Body>
+            <button onClick={handleItemToCart}> Agregar a carrrito </button>
+
+              <ItemCount counter={quantity} from={FROM} setCounter={setQuantity} to={item.stock}/>
+            </Card.Body>
         </Card>
       </Container>
     </>

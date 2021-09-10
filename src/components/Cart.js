@@ -40,13 +40,13 @@ const Cart = () => {
                         <a className="product-thumb" href="#">
                           <img
                            
-                            src={product.item.imagen}
+                            src={product.item.pictureURL}
                             alt="Producto"
                           />
                         </a>
                         <div className="product-info">
                           <h4 className="product-title">
-                            <a href="#">{product.item.titulo}</a>
+                            <a href="#">{product.item.title}</a>
                           </h4>
                           
                         </div>
