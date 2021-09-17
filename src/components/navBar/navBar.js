@@ -12,7 +12,7 @@ export const NavBar = () => {
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Container>
             
-            <CartWidget/>
+            
           
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
@@ -35,6 +35,7 @@ export const NavBar = () => {
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>
+            <CartWidget/>
           </Container>
         </Navbar>       
        

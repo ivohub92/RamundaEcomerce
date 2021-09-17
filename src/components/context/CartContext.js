@@ -10,12 +10,9 @@ export const CartProvider = ({ children }) => {
 
   const isInCart = (id) => items.find((e) => e.item.id === id) !== undefined;
 
-  const clear = () => {
-    setItems([]);
-  };
+  const clear = () => { setItems([]); };
 
-  const cartSize =
-    items.length > 0 ? items.reduce((acc, cur) => acc + cur.quantity, 0) : 0;
+  const cartSize = items.length > 0 ? items.reduce((acc, cur) => acc + cur.quantity, 0) : 0;
 
   const getItem = (id) => items.find((e) => e.item.id === id);
 

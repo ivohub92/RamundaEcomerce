@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 
 
-function Item({id,nombre, descripcion, precio, imagen}){
+function Item({id, price, description, pictureURL, title}){
 
    // let {params} = useParams();
   const history = useHistory();
@@ -18,11 +18,11 @@ function Item({id,nombre, descripcion, precio, imagen}){
     return(
        
       <Card  className="itemCard">
-        <Card.Img variant="top" src={imagen} />
+        <Card.Img variant="top" src={pictureURL} />
         <Card.Body>
-          <Card.Title> { nombre }</Card.Title>
-          <Card.Text> { descripcion }</Card.Text>
-          <Card.Text>${precio}</Card.Text>          
+          <Card.Title> { title }</Card.Title>
+          <Card.Text> { description }</Card.Text>
+          <Card.Text>$ {price} </Card.Text>          
         </Card.Body>
         <button onClick={()=>handleNavigation(id)}>ver detalles</button>
       </Card>

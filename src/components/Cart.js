@@ -3,6 +3,7 @@ import { FaTrashAlt }  from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { CartContext } from "../components/context/CartContext";
 import "./Cart.css";
+import { Button } from "react-bootstrap";
 
 
 const Cart = () => {
@@ -81,51 +82,31 @@ const Cart = () => {
                     </td>
                   </tr>
                 ))
-              ) : (
-                <Link to="/" style={{ textDecoration: "none" }}>
-                  No hay productos, volver a inicio
-                </Link>
-              )}
-              
+              ) : (<Link to="/" style={{ textDecoration: "none" }}> Carrito vacio. Volver a inicio</Link>)}             
             </tbody>
           </table>
         </div>
         <div className="shopping-cart-footer">
           <div className="column">
             <form className="coupon-form" method="post">
-              <input
-                className="form-control form-control-sm"
-                type="text"
-                placeholder="Código del Cupón"
-                required
-              />
-              <button className="btn btn-outline-primary btn-sm">
-                Aplicar Cupón
-              </button>
+              <input className="form-control form-control-sm" type="text" placeholder="Código del Cupón" required/>
+              <button className="btn btn-outline-primary btn-sm"> Aplicar Cupón</button>
             </form>
           </div>
           <div className="column text-lg">
             Total:{" "}
             <span className="text-medium">
-              $
-              {items.reduce(
-                (acc, cur) => cur.item.price * cur.quantity + acc,
-                0
-              )}
+              ${items.reduce((acc, cur) => cur.item.price * cur.quantity + acc, 0)}
             </span>
           </div>
         </div>
         <div className="shopping-cart-footer">
           <div className="column">
             <Link className="btn btn-outline-secondary" to="/">
-              <i className="icon-arrow-left" />
-              &nbsp;Volver
-            </Link>
+              <i className="icon-arrow-left" />&nbsp;Volver</Link>
           </div>
           <div className="column">
-            <a className="btn btn-success" href="#">
-              Comprar
-            </a>
+            <Button as={Link} to="/finalizar-compra"> Finalizar compra </Button>
           </div>
         </div>
       </div>

@@ -5,11 +5,11 @@ import Item from "./Item";
 
 
 
-function addItem({ id, precio, nombre, imagen, descripcion, stock }, index) {
+function addItem({ id, price, title, pictureURL, description, stock }, index) {
     return (
       <div className="">
-        <Item key={index} id={id} nombre={nombre} precio={precio} imagen={imagen}
-        stock={stock} descripcion= {descripcion}
+        <Item key={index} id={id} title={title} price={price} pictureURL={pictureURL}
+        stock={stock} description= {description}
         />
       </div>
     );
