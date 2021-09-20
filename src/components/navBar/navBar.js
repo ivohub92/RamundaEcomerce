@@ -3,6 +3,7 @@ import { Nav, Navbar, NavDropdown, Container  } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import CartWidget from "./CartWidget";
 import "./navBar.css";
+import Logo from './Logo';
 
 export const NavBar = () => {
   return (
@@ -10,11 +11,9 @@ export const NavBar = () => {
      
         
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-          <Container>
-            
-            
-          
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Container>      
+          <Nav.Link className='link' as= {Link} to='/'><Logo/></Nav.Link>            
+             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto mx-auto">
                 <Nav.Link className='margenNav' as= {Link} to='/category/lenceria'>Lingerie</Nav.Link>

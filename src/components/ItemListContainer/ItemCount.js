@@ -6,11 +6,11 @@ import {Container} from "react-bootstrap";
 function ItemCount ({ stock, initial, onAdd }) {
     const [counter, setCounter] = useState(initial);
 
-    const subsCounter = () =>{
+    const addCounter = () =>{
         if (counter > initial) return;
         setCounter(counter + 1);
     };
-    const addCounter = () =>{
+    const subsCounter = () =>{
         if (counter < stock) return;
         setCounter(counter - 1)
     };
@@ -19,9 +19,9 @@ function ItemCount ({ stock, initial, onAdd }) {
         <Container >
             <p className="itemText">Cantidad seleccionada: {counter}</p>
             <Container className="itemCount">
-                <button className="botonItemCount" action={addCounter}> +1 </button>
+                <button className="botonItemCount" onClick={addCounter}> +1 </button>
                 <p >{counter}</p>
-                <button className="botonItemCount" action={subsCounter}> -1 </button>
+                <button className="botonItemCount" onClick={subsCounter}> -1 </button>
                 <button className="botonItemCount"  onClick= {()=> onAdd(counter)}>Agregar a carrito</button>
             </Container>
            
