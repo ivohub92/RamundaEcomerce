@@ -16,25 +16,20 @@ export const NavBar = () => {
              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto mx-auto">
-                <Nav.Link className='margenNav' as= {Link} to='/category/lenceria'>Lingerie</Nav.Link>
-                <Nav.Link className='margenNav' as= {Link} to='/category/vestidos' >Vestidos</Nav.Link>
-                <NavDropdown className='margenNav' title="Colecciones anteriores" id="collasible-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Trabaja con nosotros</NavDropdown.Item>
+                <NavDropdown className='margenNav' title="Categorias" id="collasible-nav-dropdown">
+                  <NavDropdown.Item className='margenNav' as= {Link} to='/category/lenceria'>Lenceria</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.2">Nuestros ideales</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.2">Slow Fashion</NavDropdown.Item>
-                  
+                  <NavDropdown.Item className='margenNav' as= {Link} to='/category/vestidos'>Vestidos</NavDropdown.Item>
+                  <NavDropdown.Divider />                         
                 </NavDropdown>
+                <Nav.Link href="#" >Sobre nosotros</Nav.Link>
+                <Nav.Link href="#" >Contactanos!</Nav.Link>              
               </Nav>
-              <Nav>
-                <Nav.Link  as= {Link} to='/cart' >Carrito</Nav.Link>
-                <Nav.Link eventKey={2} href="#socios">
-                  Iniciar sesion!
-                </Nav.Link>
-              </Nav>
+              
             </Navbar.Collapse>
+            <Link to="/cart">
             <CartWidget/>
+            </Link>
           </Container>
         </Navbar>       
        

@@ -1,28 +1,48 @@
 import { React, useState, useEffect } from "react";
-import {getFirestore} from "../firebase/firebase";
-import "./ItemListContainer.css";
-import ItemList from "./ItemList";
+import ItemList from "../ItemListContainer/ItemList";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { getFirestore } from "../firebase/firebase";
+import { listCallback } from "../helpers/listaProductos";
 
 function ItemListContainer(props) {
-
   const [items, setItems] = useState([]);
 
   useEffect(() => {
     getFirestore()
       .collection("items")
       .get()
-      .then((data) => {
-        const nuevosItems = data.docs.map((doc) => doc.data());
-        setItems(nuevosItems);
+      .then((res) => {
+        const items = listCallback(res);
+        console.log(items);
+        setItems(items);
       });
   }, []);
+
+  // LOADING - probar implementar, tengo errores
+  //////////////////////////////////////////////
+  // const [loading, setLoading] = useState("");
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 5000);
+  // }, []);
+
+  // return (
+  //   <>
+  //     {loading ? (
+  //       <h1>Loading...</h1>
+  //     ) : (
+  //       <div className="fs-5  text-center d-flex m-auto justify-content-center flex-wrap ">
+  //         <ItemList className="" items={items} />
+  //       </div>
+  //     )}
+  //   </>
+  // );
+  //////////////////////////////////////////////
   return (
-    <>
-      <h2 className="text-center">Lista de productos</h2>
-      <div className="fs-5 text-center d-flex m-au justify-content-center flex-wrap">
-        <ItemList className="" items={items} />
-      </div>
-    </>
+    <div className="fs-5  text-center d-flex m-auto justify-content-center flex-wrap ">
+      <ItemList className="" items={items} />
+    </div>
   );
 }
 

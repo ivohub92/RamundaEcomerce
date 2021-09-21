@@ -8,7 +8,7 @@ const collectSingleProduct = (id) => {
 };
 
 // Retorna objeto 'product'
-export const listaProductos = (id) => {
+export const getProductById = (id) => {
   return collectSingleProduct(id).then((res) => {
     if (res) return res;
     throw new Error(`No '${id}' item results.`);

@@ -1,37 +1,21 @@
 import React from "react";
-import {Card} from "react-bootstrap";
-import './Item.css';
-import { useHistory } from "react-router-dom";
+import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
+function Item({ id, title, price, pictureURL }) {
+  return (
+    <Card style={{ width: "18rem", height: "648px" }}>
+      <Card.Img variant="top" src={pictureURL} />
+      <Card.Body>
+        <Card.Title>{title}</Card.Title>
+        <Card.Text>Detalle del producto.</Card.Text>
+        <p>${price}</p>
+        <Link to={`/item/${id}`}>
+          <Button variant="btn btn-dark">Ver detalles</Button>
+        </Link>
+      </Card.Body>
+    </Card>
+  );
+}
 
-
-function Item({id, price, description, pictureURL, title}){
-
-   // let {params} = useParams();
-  const history = useHistory();
-
-  const handleNavigation = (id) => {
-    history.push(`/Item/${id}`);
-  };
-
-
-    return(
-       
-      <Card  className="itemCard">
-        <Card.Img variant="top" src={pictureURL} />
-        <Card.Body>
-          <Card.Title> { title }</Card.Title>
-          <Card.Text> { description }</Card.Text>
-          <Card.Text>$ {price} </Card.Text>          
-        </Card.Body>
-        <button onClick={()=>handleNavigation(id)}>ver detalles</button>
-      </Card>
-    
-
-    
-    )
-    
-    
-};
-    
 export default Item;

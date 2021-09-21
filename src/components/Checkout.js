@@ -51,7 +51,7 @@ const Checkout = () => {
       },
       items: infoCart,
       date: firebase.firestore.Timestamp.fromDate(new Date()),
-      total: total(),
+      total: calcTotal(),
     };
 
     orders
