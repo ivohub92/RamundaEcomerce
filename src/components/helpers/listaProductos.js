@@ -7,7 +7,7 @@ const collectSingleProduct = (id) => {
   return firestore.collection("items").doc(id).get();
 };
 
-// Retorna objeto 'product'
+//Devuelve producto
 export const getProductById = (id) => {
   return collectSingleProduct(id).then((res) => {
     if (res) return res;

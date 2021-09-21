@@ -7,11 +7,11 @@ import { getFirestore } from "../Firebase/firebase";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import { Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.css";
+
 
 const Checkout = () => {
-  // acá cart no existe y calctotal tampoco (lo calculo en un jsx)
-  const { items, calcTotal } = useContext(CartContext);
+  // acá cart no existe y totalCompra tampoco (lo calculo en un jsx)
+  const { items, totalCompra } = useContext(CartContext);
   const [customerInfo, setCustomerInfo] = useState({
     name: null,
     email: null,
@@ -51,7 +51,7 @@ const Checkout = () => {
       },
       items: infoCart,
       date: firebase.firestore.Timestamp.fromDate(new Date()),
-      total: calcTotal(),
+      total: totalCompra(),
     };
 
     orders
@@ -72,7 +72,7 @@ const Checkout = () => {
     <Container>
       <Form style={{ marginTop: 30 }}>
         <Form.Group className="mb-3" controlId="formBasicName">
-          <Form.Label>Nombre</Form.Label>
+          <Form.Label>Nombre Completo</Form.Label>
           <Form.Control
             name="name"
             type="text"
@@ -81,7 +81,7 @@ const Checkout = () => {
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Correo electrónico</Form.Label>
+          <Form.Label>E-mail</Form.Label>
           <Form.Control
             name="email"
             type="email"
@@ -108,7 +108,7 @@ const Checkout = () => {
             variant="primary"
             onClick={handleFinishPurchase}
           >
-            Realizar pedido
+            Pedir!
           </Button>
         )}
       </Form>

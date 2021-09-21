@@ -5,16 +5,8 @@ import { useEffect } from "react";
 
 function addItem({ id, price, title, pictureURL, category, stock }, index) {
   return (
-    <div className="">
-      <Item
-        key={index}
-        id={id}
-        title={title}
-        price={price}
-        pictureURL={pictureURL}
-        category={category}
-        stock={stock}
-      />
+    <div>
+      <Item key={index} id={id} title={title} price={price} pictureURL={pictureURL} category={category} stock={stock}/>
     </div>
   );
 }

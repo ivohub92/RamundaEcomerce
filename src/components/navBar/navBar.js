@@ -19,8 +19,7 @@ export const NavBar = () => {
                 <NavDropdown className='margenNav' title="Categorias" id="collasible-nav-dropdown">
                   <NavDropdown.Item className='margenNav' as= {Link} to='/category/lenceria'>Lenceria</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item className='margenNav' as= {Link} to='/category/vestidos'>Vestidos</NavDropdown.Item>
-                  <NavDropdown.Divider />                         
+                  <NavDropdown.Item className='margenNav' as= {Link} to='/category/vestidos'>Vestidos</NavDropdown.Item>                       
                 </NavDropdown>
                 <Nav.Link href="#" >Sobre nosotros</Nav.Link>
                 <Nav.Link href="#" >Contactanos!</Nav.Link>              

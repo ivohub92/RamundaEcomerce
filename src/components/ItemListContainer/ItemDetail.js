@@ -1,9 +1,10 @@
-import React, { useState, useContext } from "react";
-import { Card } from "react-bootstrap";
-import ItemCount from "../ItemListContainer/ItemCount";
-import { Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.css";
+import { React, useState, useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import ItemCount from "../ItemListContainer/ItemCount";
+
+
 
 function ItemDetail({ item }) {
   const [selectedItem, setSelectedItem] = useState(0);
@@ -20,17 +21,8 @@ function ItemDetail({ item }) {
       <Card.Body>
         <Card.Title>{item.title}</Card.Title>
         <Card.Text>Detalle del producto.</Card.Text>
-        <p>${item.price}</p>
-
-        {setSelectedItem > 0 ? (
-          <Link to="/cart" onClick={() => addItem(item, selectedItem)}>
-            <button className="btn btn-dark">
-              Agregar {setSelectedItem} al carrito
-            </button>
-          </Link>
-        ) : (
-          <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
-        )}
+        <p>${item.price}</p>        
+          <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />        
       </Card.Body>
     </Card>
   );

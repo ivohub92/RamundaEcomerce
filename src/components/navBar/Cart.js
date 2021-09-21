@@ -1,17 +1,12 @@
-import React, { useContext } from "react";
-
+import  { React, useContext } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "../components/context/CartContext";
 import { FaTrashAlt } from "react-icons/fa";
 import { Button } from "react-bootstrap";
+import { CartContext } from "../context/CartContext";
 
-/* const sumaTotal = () => {
-  const { items } = useContext(CartContext);
-  items.reduce((acc, cur) => acc + cur.price);
-  console.log(sumaTotal());
-}; */
 
-const Cart = () => {
+
+export const Cart = () => {
   const { items, cartSize, clear, removeItems } = useContext(CartContext);
   console.log("items", items);
   console.log("cartsize", cartSize);
@@ -48,23 +43,13 @@ const Cart = () => {
                     <td>
                       <div className="product-item">
                         <a className="product-thumb" href="#">
-                          <img
-                            /*  src="https://via.placeholder.com/220x180/5F9EA0/000000" */
-                            src={product.item.pictureURL}
-                            alt="Producto"
-                          />
+                          <img src={product.item.pictureURL} alt="Producto"/>
                         </a>
                         <div className="product-info">
                           <h4 className="product-title">
                             <a href="#">{product.item.title}</a>
                           </h4>
-                          <span>
-                            <em>Autor:</em> XXXX
-                          </span>
-                          <span>
-                            <em>Institución:</em> XXXX
-                          </span>
-                        </div>
+                         </div>
                       </div>
                     </td>
                     <td className="text-center">
@@ -79,19 +64,8 @@ const Cart = () => {
                     </td>
 
                     <td className="text-center">
-                      <a
-                        className="remove-from-cart"
-                        href="#"
-                        data-toggle="tooltip"
-                        title
-                        data-original-title="Remove item"
-                      >
-                        <FaTrashAlt
-                          onClick={() => removeItems(product.item.id, 1)}
-                          size=""
-                          color="red"
-                          className=""
-                        />
+                      <a className="remove-from-cart" href="#" data-toggle="tooltip" title data-original-title="Remove item">
+                        <FaTrashAlt onClick={() => removeItems(product.item.id, 1)} size="" color="red" className=""/>
                       </a>
                     </td>
                   </tr>
@@ -108,12 +82,7 @@ const Cart = () => {
         <div className="shopping-cart-footer">
           <div className="column">
             <form className="coupon-form" method="post">
-              <input
-                className="form-control form-control-sm"
-                type="text"
-                placeholder="Código del Cupón"
-                required
-              />
+              <input className="form-control form-control-sm" type="text" placeholder="Código del Cupón" required/>
               <button className="btn btn-outline-primary btn-sm">
                 Aplicar Cupón
               </button>
@@ -123,10 +92,7 @@ const Cart = () => {
             Total:{" "}
             <span className="text-medium">
               $
-              {items.reduce(
-                (acc, cur) => cur.item.price * cur.quantity + acc,
-                0
-              )}
+              {items.reduce( (acc, cur) => cur.item.price * cur.quantity + acc, 0)}
             </span>
           </div>
         </div>
