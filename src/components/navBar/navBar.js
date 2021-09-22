@@ -21,13 +21,13 @@ export const NavBar = () => {
                   <NavDropdown.Divider />
                   <NavDropdown.Item className='margenNav' as= {Link} to='/category/vestidos'>Vestidos</NavDropdown.Item>                       
                 </NavDropdown>
-                <Nav.Link href="#" >Sobre nosotros</Nav.Link>
+                
                 <Nav.Link href="#" >Contactanos!</Nav.Link>              
               </Nav>
               
             </Navbar.Collapse>
             <Link to="/cart">
-            <CartWidget/>
+              <CartWidget/>
             </Link>
           </Container>
         </Navbar>       

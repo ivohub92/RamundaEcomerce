@@ -20,7 +20,7 @@ function ItemDetail({ item }) {
       <Card.Img variant="top" src={item.pictureURL} />
       <Card.Body>
         <Card.Title>{item.title}</Card.Title>
-        <Card.Text>Detalle del producto.</Card.Text>
+        <Card.Text>{item.description}</Card.Text>
         <p>${item.price}</p>        
           <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />        
       </Card.Body>
